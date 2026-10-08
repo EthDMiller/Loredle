@@ -2010,6 +2010,7 @@ const HARD_SET=["Vagrant Story","Xenogears","Chrono Cross","Suikoden II","Shenmu
 PUZZLES.forEach(p=>{p.tags=TAGS[p.t]||[];p.hard=HARD_SET.includes(p.t);const x=EXTRA_CLUES[p.t];if(x)p.c=p.c.map((c,i)=>i<5&&x[i]?[c,x[i]]:c)});
 const CATALOG=[...PUZZLES.map(p=>E(p.t,p.y,p.g,p.d,p.a)),...EXTRA].sort((a,b)=>a.t.localeCompare(b.t));
 const MAX=6;
+const SITE_URL='https://ethdmiller.github.io/Loredle/';
 const SKIP='(skipped)';
 const GENRE_GROUP={'RPG':'RPG','Action RPG':'RPG','Action-adventure':'Action','Beat-em-up':'Action','Fighting':'Fighting','Platformer':'Platformer','Metroidvania':'Platformer','FPS':'Shooter','Shooter':'Shooter','Puzzle':'Puzzle','Roguelike':'Roguelike','Strategy':'Strategy','Horror':'Horror','Simulation':'Sim','Sandbox':'Sim','Survival':'Sim','Stealth':'Stealth','Adventure':'Adventure','Party':'Party','Sports':'Sports','Arcade':'Arcade'};
 const PLATFORMS=['NES','SNES','N64','GameCube','Wii','Switch','Handheld','PlayStation','Xbox','Sega','PC','Arcade','Mobile','Indie'];
@@ -2215,7 +2216,7 @@ function share(){
   const n=S.guesses.length;
   const row=S.guesses.map((g,i)=>(S.won&&i===n-1)?'🟩':(g===SKIP?'⬜':'🟥')).join('')+'⬛'.repeat(MAX-n);
   const head=S.mode==='daily'?`Loredle #${S.dayN+1}`:S.mode==='archive'?`Loredle #${S.dayN+1} (archive)`:(S.hard?'Loredle hard mode':'Loredle free play');
-  const text=`${head} ${S.won?n:'X'}/${MAX}\n${row}\n${S.won?'Solved with '+Math.min(n,MAX)+' piece'+(n===1?'':'s')+' of lore.':'Unsolved.'}`;
+  const text=`${head} ${S.won?n:'X'}/${MAX}\n${row}\n${S.won?'Solved with '+Math.min(n,MAX)+' piece'+(n===1?'':'s')+' of lore.':'Unsolved.'}\n${SITE_URL}`;
   const done=()=>{const t=$('toast');t.textContent='Result copied';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)};
   try{navigator.clipboard.writeText(text).then(done).catch(()=>fallback(text))}catch(e){fallback(text)}
   function fallback(t){const ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(e){}document.body.removeChild(ta)}
