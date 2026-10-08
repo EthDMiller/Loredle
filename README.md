@@ -2,7 +2,7 @@
 
 Guess the video game from six pieces of lore. One daily puzzle, plus free play with era, platform, and genre filters, a hard mode, and an archive of past dailies.
 
-Play it at **https://ethdmiller.github.io/Loredle/** (once Pages is enabled).
+Play it at **https://ethdmiller.github.io/Loredle/** 
 
 ## How it works
 
