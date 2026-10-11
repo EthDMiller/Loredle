@@ -1,13 +1,13 @@
 # Loredle
 
-Guess the video game from six pieces of lore. One daily puzzle, plus free play with era, platform, and genre filters, a hard mode, and an archive of past dailies.
+Guess the video game from six pieces of lore. Three daily puzzles (standard, easy — fifty greatest hits — and hard — deep cuts, no hints — each with its own streak and archive), free play with era, platform, and genre filters, easy and hard modes, and an archive of past dailies.
 
-Play it at **https://ethdmiller.github.io/Loredle/** 
+Play it at **https://ethdmiller.github.io/Loredle/** (once Pages is enabled).
 
 ## How it works
 
 - Six clues per game, revealed one at a time, from oblique to obvious. Each tier has two variants, so a repeat game plays as a different puzzle.
-- Six guesses. A miss tells you whether the answer is earlier or later than your guess and whether the genre or developer match. Hard mode turns those hints off and adds deeper cuts to the pool.
+- Six guesses. A miss tells you whether the answer is earlier or later than your guess and whether the genre or developer match. Easy mode limits the pool to fifty greatest hits; hard mode turns the hints off and adds deeper cuts.
 - Everything (streaks, stats, flags, archive results) lives in your browser's local storage. There is no server.
 
 ## Running it

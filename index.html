@@ -61,14 +61,13 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .iconbtns{display:flex;gap:6px}
 .ib{height:38px;min-width:38px;padding:0 10px;border-radius:8px;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;font-weight:700;font-size:15px}
 .ib:hover{border-color:var(--accent)}
-.ib.star{padding:0 4px;border-color:transparent;background:none}
-.ib.star svg{width:40px;height:36px;display:block}
-.ib.star path,.bigstar path{fill:var(--bad)}
-.ib.star text,.bigstar text{font-family:var(--body);font-size:4.3px;font-weight:700;fill:#fff;text-anchor:middle;font-variant-numeric:tabular-nums}
+.ib.star{padding:0 4px;border-color:transparent;background:none;height:auto}
+.ib.star svg{width:36px;height:46px;display:block;overflow:visible;shape-rendering:crispEdges}
+.ib.star text,.bigstar text{font-family:var(--display);font-size:7px;font-weight:700;fill:#fff;text-anchor:middle;font-variant-numeric:tabular-nums;paint-order:stroke;stroke:#2b1309;stroke-width:1.1px;stroke-linejoin:round;letter-spacing:-.3px}
 .splash .streaks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .splash .streaks>div{display:flex;align-items:center;justify-content:center;gap:12px;padding:8px;border:1px solid var(--line);border-radius:10px}
 .splash .streaks span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
-.bigstar{width:52px;height:48px;display:block}
+.bigstar{width:46px;height:58px;display:block;overflow:visible;shape-rendering:crispEdges}
 .combo{font-family:var(--body);font-size:30px;font-weight:700;color:var(--accent);line-height:1;display:flex;align-items:baseline;gap:1px;font-variant-numeric:tabular-nums}
 .combo small{font-size:16px;color:var(--muted);font-weight:500}
 .combo.zero{color:var(--muted)}
@@ -76,9 +75,11 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 
 .sub{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-block:14px 6px;flex-wrap:wrap}
 .sub h2{margin:0;font-size:22px;font-weight:700;text-wrap:balance;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.mode{font-family:var(--display);font-size:10px;letter-spacing:.6px;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--accent);color:var(--accent-ink);line-height:1.2}
+.mode{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0;text-transform:none;padding:4px 10px;border-radius:999px;background:var(--accent);color:var(--accent-ink);line-height:1.3;position:relative;top:-1px}
 .mode.free{background:var(--accent-soft);color:var(--accent)}
 .eyebrow{font-family:var(--display);font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}
+#puzzleLabel{font-family:var(--body);font-size:13px;letter-spacing:0;text-transform:none;font-weight:500}
+#puzzleLabel button{font-weight:600}
 .eyebrow button{font:inherit;color:var(--accent);background:none;border:0;padding:0;text-transform:inherit;letter-spacing:inherit;text-decoration:underline;text-underline-offset:3px}
 
 .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
@@ -200,10 +201,10 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
 .actions .mini{margin-left:auto;font-family:var(--body);font-size:13px;letter-spacing:0;text-transform:none}
 .mode.hard{background:var(--bad);color:#fff}
 .mode.easy{background:var(--good);color:#fff}
-.dsl{position:relative;display:inline-grid;grid-template-columns:repeat(3,1fr);width:240px;height:34px;border-radius:999px;background:var(--line);box-shadow:inset 0 1px 2px rgba(0,0,0,.18);user-select:none;-webkit-user-select:none;touch-action:none;cursor:grab;font-family:var(--display);font-size:11px;letter-spacing:.6px;text-transform:uppercase;transition:background .25s;outline:none;vertical-align:middle}
+.dsl{position:relative;display:inline-grid;grid-template-columns:repeat(3,1fr);width:240px;height:34px;border-radius:999px;background:var(--line);box-shadow:inset 0 1px 2px rgba(0,0,0,.18);user-select:none;-webkit-user-select:none;touch-action:none;cursor:grab;font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;transition:background .25s;outline:none;vertical-align:middle}
 .dsl:focus-visible{box-shadow:inset 0 1px 2px rgba(0,0,0,.18),0 0 0 2px var(--accent)}
 .dsl.drag{cursor:grabbing}
-.dsl.sm{width:174px;height:26px;font-size:10px;letter-spacing:.5px}
+.dsl.sm{width:174px;height:26px;font-size:12px}
 .dsl-lbl{display:grid;place-items:center;color:var(--muted);position:relative;z-index:3;transition:color .2s,text-shadow .2s;pointer-events:none;white-space:nowrap}
 .dsl-knob{position:absolute;z-index:1;top:2px;bottom:2px;left:2px;width:calc(33.333% - 2px);border-radius:999px;pointer-events:none;
   background:linear-gradient(180deg,rgba(255,255,255,.62) 0%,rgba(255,255,255,.3) 48%,rgba(255,255,255,.1) 52%,rgba(255,255,255,.26) 100%);
@@ -256,7 +257,7 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
   <header>
     <a class="logo" href="#"><svg viewBox="0 0 34 24" aria-hidden="true"><rect x="1" y="4" width="32" height="16" rx="6" fill="var(--accent)"/><rect x="6" y="9" width="3" height="7" fill="var(--accent-ink)"/><rect x="4" y="11" width="7" height="3" fill="var(--accent-ink)"/><circle cx="25" cy="10" r="1.7" fill="var(--accent-ink)"/><circle cx="28" cy="13" r="1.7" fill="var(--accent-ink)"/><circle cx="22" cy="13" r="1.7" fill="var(--accent-ink)"/><circle cx="25" cy="16" r="1.7" fill="var(--accent-ink)"/></svg><h1>Loredle</h1></a>
     <div class="iconbtns">
-      <button class="ib star" id="dailyStreak" aria-label="Daily streak" title="Daily streak"><svg viewBox="0 0 11 10" aria-hidden="true"><path d="M1 0h3v1h-3zM7 0h3v1h-3zM0 1h5v1h-5zM6 1h5v1h-5zM0 2h11v1h-11zM0 3h11v1h-11zM1 4h9v1h-9zM2 5h7v1h-7zM3 6h5v1h-5zM4 7h3v1h-3zM5 8h1v1h-1z"/><text x="5.5" y="5.35" id="dailyStreakN">0</text></svg></button>
+      <button class="ib star" id="dailyStreak" aria-label="Daily streak" title="Daily streak"><svg viewBox="0 0 15 19" aria-hidden="true"><path d="M9 0h1v1h-1zM10 0h1v1h-1zM8 1h1v1h-1zM11 1h1v1h-1zM8 2h1v1h-1zM11 2h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM7 3h1v1h-1zM12 3h1v1h-1zM2 4h1v1h-1zM5 4h1v1h-1zM7 4h1v1h-1zM12 4h1v1h-1zM2 5h1v1h-1zM6 5h1v1h-1zM7 5h1v1h-1zM12 5h1v1h-1zM1 6h1v1h-1zM6 6h1v1h-1zM13 6h1v1h-1zM1 7h1v1h-1zM13 7h1v1h-1zM1 8h1v1h-1zM13 8h1v1h-1zM0 9h1v1h-1zM14 9h1v1h-1zM0 10h1v1h-1zM14 10h1v1h-1zM0 11h1v1h-1zM14 11h1v1h-1zM0 12h1v1h-1zM14 12h1v1h-1zM0 13h1v1h-1zM14 13h1v1h-1zM1 14h1v1h-1zM13 14h1v1h-1zM1 15h1v1h-1zM13 15h1v1h-1zM2 16h1v1h-1zM12 16h1v1h-1zM3 17h1v1h-1zM4 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1z" fill="#2b1309"/><path d="M9 1h1v1h-1zM10 1h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM9 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM9 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM10 6h1v1h-1zM11 6h1v1h-1zM12 6h1v1h-1zM5 7h1v1h-1zM6 7h1v1h-1zM10 7h1v1h-1zM11 7h1v1h-1zM12 7h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM12 8h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM11 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM12 10h1v1h-1zM13 10h1v1h-1zM6 11h1v1h-1zM7 11h1v1h-1zM12 11h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM12 12h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM11 13h1v1h-1zM8 14h1v1h-1zM9 14h1v1h-1zM10 14h1v1h-1z" fill="#ffc531"/><path d="M8 3h1v1h-1zM8 4h1v1h-1zM3 5h1v1h-1zM8 5h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM8 6h1v1h-1zM9 6h1v1h-1zM2 7h1v1h-1zM3 7h1v1h-1zM4 7h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM6 9h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM13 11h1v1h-1zM4 12h1v1h-1zM5 12h1v1h-1zM13 12h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM6 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM6 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM9 15h1v1h-1zM10 15h1v1h-1zM11 15h1v1h-1zM7 16h1v1h-1zM8 16h1v1h-1zM9 16h1v1h-1z" fill="#f47c20"/><path d="M7 6h1v1h-1zM7 7h1v1h-1zM2 8h1v1h-1zM1 9h1v1h-1zM2 9h1v1h-1zM1 10h1v1h-1zM2 10h1v1h-1zM1 11h1v1h-1zM2 11h1v1h-1zM1 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM1 13h1v1h-1zM2 13h1v1h-1zM3 13h1v1h-1zM2 14h1v1h-1zM3 14h1v1h-1zM4 14h1v1h-1zM2 15h1v1h-1zM3 15h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM12 15h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM10 16h1v1h-1zM11 16h1v1h-1zM5 17h1v1h-1zM6 17h1v1h-1zM7 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1z" fill="#d9442b"/><path d="M9 9h1v1h-1zM10 9h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM8 11h1v1h-1zM9 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM8 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1z" fill="#fff1b8"/><text x="7.5" y="14.6" id="dailyStreakN">0</text></svg></button>
       <button class="ib" id="btnArchive" aria-label="Archive" title="Archive"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="1.5" y="3" width="15" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M1.5 7h15M6 1.5v3M12 1.5v3" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="4.5" y="9.5" width="3" height="3" fill="currentColor"/><rect x="9.5" y="9.5" width="3" height="3" fill="currentColor"/></svg></button>
       <button class="ib" id="btnStats" aria-label="Stats" title="Stats">≡</button>
     </div>
@@ -295,7 +296,8 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
     <li>You get <b>six guesses</b>. Every miss reveals the next piece of lore, and they get more direct as you go.</li>
     <li>Misses tell you whether the answer is <b>earlier or later</b> than your guess, and whether the genre or developer match.</li>
     <li>Pick titles from the list; abbreviations like <i>BotW</i> or <i>RDR2</i> work. Stuck? Skipping costs a guess and reveals the next clue.</li>
-    <li>A new game arrives at midnight. The heart is your daily streak; every round you win in a row builds your round streak.</li>
+    <li>A new game arrives at midnight. The flame is your daily streak; every round you win in a row builds your round streak.</li>
+    <li>Slide to <b>Easy</b> or <b>Hard</b> for a different daily — fifty greatest hits, or deep cuts with no hints — each with its own streak and archive.</li>
     <li>Missed a day? The calendar holds every past daily. Free play has filters, an easy mode of greatest hits, and a hard mode of deep cuts.</li>
   </ul>
   <button class="btn close" id="closeHelp">Got it</button>
@@ -303,12 +305,12 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
 
 <dialog id="dlgStats" class="sheet"><div class="dlg splash">
   <div class="streaks">
-    <div><svg class="bigstar" viewBox="0 0 11 10" aria-hidden="true"><path d="M1 0h3v1h-3zM7 0h3v1h-3zM0 1h5v1h-5zM6 1h5v1h-5zM0 2h11v1h-11zM0 3h11v1h-11zM1 4h9v1h-9zM2 5h7v1h-7zM3 6h5v1h-5zM4 7h3v1h-3zM5 8h1v1h-1z"/><text x="5.5" y="5.35" id="spDaily">0</text></svg><span>Daily streak</span></div>
+    <div><svg class="bigstar" viewBox="0 0 15 19" aria-hidden="true"><path d="M9 0h1v1h-1zM10 0h1v1h-1zM8 1h1v1h-1zM11 1h1v1h-1zM8 2h1v1h-1zM11 2h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM7 3h1v1h-1zM12 3h1v1h-1zM2 4h1v1h-1zM5 4h1v1h-1zM7 4h1v1h-1zM12 4h1v1h-1zM2 5h1v1h-1zM6 5h1v1h-1zM7 5h1v1h-1zM12 5h1v1h-1zM1 6h1v1h-1zM6 6h1v1h-1zM13 6h1v1h-1zM1 7h1v1h-1zM13 7h1v1h-1zM1 8h1v1h-1zM13 8h1v1h-1zM0 9h1v1h-1zM14 9h1v1h-1zM0 10h1v1h-1zM14 10h1v1h-1zM0 11h1v1h-1zM14 11h1v1h-1zM0 12h1v1h-1zM14 12h1v1h-1zM0 13h1v1h-1zM14 13h1v1h-1zM1 14h1v1h-1zM13 14h1v1h-1zM1 15h1v1h-1zM13 15h1v1h-1zM2 16h1v1h-1zM12 16h1v1h-1zM3 17h1v1h-1zM4 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1z" fill="#2b1309"/><path d="M9 1h1v1h-1zM10 1h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM9 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM9 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM10 6h1v1h-1zM11 6h1v1h-1zM12 6h1v1h-1zM5 7h1v1h-1zM6 7h1v1h-1zM10 7h1v1h-1zM11 7h1v1h-1zM12 7h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM12 8h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM11 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM12 10h1v1h-1zM13 10h1v1h-1zM6 11h1v1h-1zM7 11h1v1h-1zM12 11h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM12 12h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM11 13h1v1h-1zM8 14h1v1h-1zM9 14h1v1h-1zM10 14h1v1h-1z" fill="#ffc531"/><path d="M8 3h1v1h-1zM8 4h1v1h-1zM3 5h1v1h-1zM8 5h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM8 6h1v1h-1zM9 6h1v1h-1zM2 7h1v1h-1zM3 7h1v1h-1zM4 7h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM6 9h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM13 11h1v1h-1zM4 12h1v1h-1zM5 12h1v1h-1zM13 12h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM6 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM6 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM9 15h1v1h-1zM10 15h1v1h-1zM11 15h1v1h-1zM7 16h1v1h-1zM8 16h1v1h-1zM9 16h1v1h-1z" fill="#f47c20"/><path d="M7 6h1v1h-1zM7 7h1v1h-1zM2 8h1v1h-1zM1 9h1v1h-1zM2 9h1v1h-1zM1 10h1v1h-1zM2 10h1v1h-1zM1 11h1v1h-1zM2 11h1v1h-1zM1 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM1 13h1v1h-1zM2 13h1v1h-1zM3 13h1v1h-1zM2 14h1v1h-1zM3 14h1v1h-1zM4 14h1v1h-1zM2 15h1v1h-1zM3 15h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM12 15h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM10 16h1v1h-1zM11 16h1v1h-1zM5 17h1v1h-1zM6 17h1v1h-1zM7 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1z" fill="#d9442b"/><path d="M9 9h1v1h-1zM10 9h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM8 11h1v1h-1zM9 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM8 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1z" fill="#fff1b8"/><text x="7.5" y="14.6" id="spDaily">0</text></svg><span>Daily streak</span></div>
     <div><div class="combo" id="spRound"><small>×</small>0</div><span>Round streak</span></div>
   </div>
   <div class="graphs">
     <div>
-      <h3>Daily</h3>
+      <h3 id="spDailyH">Daily</h3>
       <div class="stats" id="statsGrid"></div>
       <div class="eyebrow">Solved on guess</div>
       <div class="dist" id="dist"></div>
@@ -3400,7 +3402,17 @@ const DAILY_ORDER=["Metal Gear Solid","Super Mario 64","The Legend of Zelda: Oca
 
 // Daily schedule is a fixed list of titles; new puzzles are appended to the end so past and future dailies never shift.
 PUZZLES.forEach(p=>{if(!p.hard&&!DAILY_ORDER.includes(p.t))DAILY_ORDER.push(p.t)});
-const dailyIndex=n=>{const t=DAILY_ORDER[((n%DAILY_ORDER.length)+DAILY_ORDER.length)%DAILY_ORDER.length];const i=PUZZLES.findIndex(p=>p.t===t);return i<0?0:i};
+const EASY_ORDER=["Street Fighter II","World of Warcraft","Doom","Among Us","Overwatch","Space Invaders","Rock Band","Grand Theft Auto V","Pong","The Legend of Zelda: Ocarina of Time","Frogger","Pokémon GO","Minecraft","Super Mario World","Red Dead Redemption 2","Mario Kart 64","Lego Star Wars: The Video Game","Guitar Hero","Super Mario 64","Plants vs. Zombies","Five Nights at Freddy’s","Super Mario Bros. 3","Final Fantasy VII","Animal Crossing: New Horizons","League of Legends","Minesweeper","Halo: Combat Evolved","Fortnite","Sonic the Hedgehog","Super Mario Odyssey","Super Mario Bros.","Pokémon Red and Blue","Wii Sports","Super Smash Bros.","The Legend of Zelda: Breath of the Wild","Donkey Kong","Pac-Man","Duck Hunt","The Sims","Tomb Raider","The Elder Scrolls V: Skyrim","Rocket League","Mortal Kombat","Super Mario Sunshine","Dance Dance Revolution","Tetris","Mario Party","Crash Bandicoot","Portal","Angry Birds","Halo: Combat Evolved","Doom","Red Dead Redemption 2","Super Mario 64","Minesweeper","The Legend of Zelda: Breath of the Wild","Donkey Kong","Super Mario Bros. 3","Fortnite","The Legend of Zelda: Ocarina of Time","Space Invaders","Sonic the Hedgehog","League of Legends","Pac-Man","Duck Hunt","The Sims","Super Mario World","Pong","Crash Bandicoot","Portal","Angry Birds","Super Mario Sunshine","Plants vs. Zombies","Super Mario Odyssey","Animal Crossing: New Horizons","Mortal Kombat","Final Fantasy VII","Frogger","Tomb Raider","Guitar Hero","Pokémon Red and Blue","Rock Band","World of Warcraft","Street Fighter II","Overwatch","Super Mario Bros.","Mario Kart 64","Dance Dance Revolution","Pokémon GO","Among Us","Super Smash Bros.","Wii Sports","The Elder Scrolls V: Skyrim","Rocket League","Tetris","Lego Star Wars: The Video Game","Mario Party","Grand Theft Auto V","Minecraft","Five Nights at Freddy’s","Portal","Frogger","Tomb Raider","Minesweeper","Street Fighter II","Crash Bandicoot","The Sims","Super Mario Sunshine","Super Mario Bros. 3","Super Mario Bros.","Among Us","Super Smash Bros.","The Legend of Zelda: Breath of the Wild","The Elder Scrolls V: Skyrim","Space Invaders","Guitar Hero","League of Legends","Mario Party","Grand Theft Auto V","Fortnite","Five Nights at Freddy’s","Duck Hunt","Final Fantasy VII","Doom","Tetris","World of Warcraft","Super Mario World","Wii Sports","The Legend of Zelda: Ocarina of Time","Rock Band","Minecraft","Pokémon Red and Blue","Angry Birds","Lego Star Wars: The Video Game","Red Dead Redemption 2","Overwatch","Animal Crossing: New Horizons","Pokémon GO","Pong","Dance Dance Revolution","Mario Kart 64","Super Mario 64","Pac-Man","Sonic the Hedgehog","Donkey Kong","Mortal Kombat","Rocket League","Super Mario Odyssey","Halo: Combat Evolved","Plants vs. Zombies","Fortnite","Mario Party","Wii Sports","Super Mario Bros.","The Legend of Zelda: Ocarina of Time","Lego Star Wars: The Video Game","League of Legends","Overwatch","Pokémon GO","Pokémon Red and Blue","Final Fantasy VII","Doom","Space Invaders","Minesweeper","Super Mario 64","Donkey Kong","Mortal Kombat","Tetris","World of Warcraft","Halo: Combat Evolved","Plants vs. Zombies","Five Nights at Freddy’s","Grand Theft Auto V","Sonic the Hedgehog","Among Us","Red Dead Redemption 2","Rock Band","Street Fighter II","Rocket League","Portal","Animal Crossing: New Horizons","Angry Birds","Tomb Raider","Super Mario Sunshine","Super Mario World","Duck Hunt","Dance Dance Revolution","The Sims","The Legend of Zelda: Breath of the Wild","Crash Bandicoot","Pac-Man","Super Smash Bros.","Guitar Hero","Frogger","The Elder Scrolls V: Skyrim","Minecraft","Super Mario Bros. 3","Pong","Mario Kart 64","Super Mario Odyssey","Rock Band","Red Dead Redemption 2","Lego Star Wars: The Video Game","Animal Crossing: New Horizons","Pokémon Red and Blue","Doom","Donkey Kong","Fortnite","The Legend of Zelda: Ocarina of Time","Super Mario World","Among Us","Pac-Man","World of Warcraft","Mortal Kombat","Super Mario Sunshine","Wii Sports","Five Nights at Freddy’s","Halo: Combat Evolved","The Elder Scrolls V: Skyrim","Pong","The Legend of Zelda: Breath of the Wild","Angry Birds","Plants vs. Zombies","Portal","Minesweeper","Crash Bandicoot","Super Mario 64","Minecraft","Sonic the Hedgehog","Super Mario Bros. 3","Super Mario Odyssey","Tomb Raider","Street Fighter II","Super Smash Bros.","Mario Kart 64","Guitar Hero","Frogger","Super Mario Bros.","Tetris","Rocket League","The Sims","Mario Party","Pokémon GO","Grand Theft Auto V","Overwatch","League of Legends","Final Fantasy VII","Dance Dance Revolution","Duck Hunt","Space Invaders","Animal Crossing: New Horizons","Pong","Tomb Raider","Doom","Lego Star Wars: The Video Game","Super Smash Bros.","Super Mario Bros. 3","Among Us","The Legend of Zelda: Ocarina of Time","Tetris","Mario Kart 64","The Sims","Street Fighter II","Super Mario Sunshine","Donkey Kong","Overwatch","League of Legends","Final Fantasy VII","Dance Dance Revolution","Duck Hunt","Space Invaders","Rock Band","Guitar Hero","The Elder Scrolls V: Skyrim","Portal","The Legend of Zelda: Breath of the Wild","Frogger","Plants vs. Zombies","World of Warcraft","Minecraft","Five Nights at Freddy’s","Crash Bandicoot","Mortal Kombat","Sonic the Hedgehog","Super Mario 64","Halo: Combat Evolved","Angry Birds","Red Dead Redemption 2","Wii Sports","Rocket League","Pac-Man","Pokémon Red and Blue","Grand Theft Auto V","Minesweeper","Super Mario Odyssey","Super Mario World","Fortnite","Pokémon GO","Super Mario Bros.","Mario Party","Portal","Dance Dance Revolution","Guitar Hero","League of Legends","The Sims","Crash Bandicoot","The Legend of Zelda: Ocarina of Time","Sonic the Hedgehog","Mortal Kombat","Wii Sports","Rocket League","Space Invaders","Pokémon Red and Blue","Super Smash Bros.","Doom","Red Dead Redemption 2","Plants vs. Zombies","The Legend of Zelda: Breath of the Wild","Pokémon GO","Pac-Man","Mario Party","Super Mario World","Pong","Super Mario Odyssey","Minesweeper","Fortnite","Tetris","Final Fantasy VII","Donkey Kong","Minecraft","Mario Kart 64","Angry Birds","Street Fighter II","Super Mario Bros.","Super Mario 64","Grand Theft Auto V","Frogger","Overwatch","Rock Band","Duck Hunt","The Elder Scrolls V: Skyrim","Halo: Combat Evolved","Animal Crossing: New Horizons","Super Mario Bros. 3","Tomb Raider","Five Nights at Freddy’s","World of Warcraft","Super Mario Sunshine","Among Us","Lego Star Wars: The Video Game","Dance Dance Revolution","Plants vs. Zombies","Super Mario World","League of Legends","Sonic the Hedgehog","Super Mario 64","Pong","Space Invaders","Doom","Wii Sports","Red Dead Redemption 2","The Elder Scrolls V: Skyrim","Minesweeper","Donkey Kong","Angry Birds","Rocket League","Five Nights at Freddy’s","World of Warcraft","Street Fighter II","Halo: Combat Evolved","Rock Band","Portal","Super Mario Sunshine","Among Us","Crash Bandicoot","Tetris","Super Mario Bros.","Duck Hunt","Pokémon Red and Blue","Minecraft","Mario Kart 64","Super Mario Bros. 3","Animal Crossing: New Horizons","Mortal Kombat","Mario Party","Frogger","Overwatch","Super Smash Bros.","Final Fantasy VII","Grand Theft Auto V","Tomb Raider","The Sims","Pac-Man","Pokémon GO","The Legend of Zelda: Ocarina of Time","Guitar Hero","Lego Star Wars: The Video Game","Fortnite","The Legend of Zelda: Breath of the Wild","Super Mario Odyssey"];
+
+const HARD_ORDER=["Metroid Dread","LittleBigPlanet","Dragon Warrior","Elite","Phasmophobia","Planescape: Torment","Heroes of Might and Magic III","Monster Hunter: World","Night in the Woods","F-Zero","Clair Obscur: Expedition 33","Psychonauts","Suikoden II","Bomberman","Jet Set Radio","Yakuza 0","Tunic","Kingdom Hearts II","I Wanna Be the Guy","Perfect Dark","Shadow of the Colossus","Okami","Chrono Cross","Ico","Pentiment","Grim Fandango","Metaphor: ReFantazio","Dragon Quest VIII: Journey of the Cursed King","Split Fiction","Sly Cooper and the Thievius Raccoonus","System Shock 2","PlayerUnknown’s Battlegrounds","Vagrant Story","Crystalis","Katana Zero","Loop Hero","F.E.A.R.","River City Ransom","Lode Runner","Joust","Advance Wars","Rez","League of Legends","Ori and the Blind Forest","Thief: The Dark Project","Panzer Dragoon Saga","Splatoon","Super Smash Bros. Melee","Prince of Persia: The Sands of Time","Terranigma","Life Is Strange","Shining Force","Control","StarTropics","Kid Icarus","Killer7","Seiken Densetsu 3","Half-Life: Alyx","Xenoblade Chronicles","ActRaiser","Blaster Master","Palworld","The World Ends with You","Dead Cells","ToeJam & Earl","Signalis","Deus Ex","Marvel’s Spider-Man","Bubble Bobble","Braid","Ecco the Dolphin","MechWarrior 2","Max Payne","Xenogears","Professor Layton and the Curious Village","Baba Is You","Fire Emblem: Awakening","Shenmue","Inside","Ape Escape","Zelda II: The Adventure of Link","Alan Wake 2","Uncharted 2: Among Thieves","Dig Dug","Lethal Company","Skies of Arcadia","Hyper Light Drifter","Noita","Golden Sun","Fallout","Day of the Tentacle","Theme Hospital","La-Mulana","Gunstar Heroes","Jak and Daxter: The Precursor Legacy","The Secret of Monkey Island","Mother 3","Limbo","A Short Hike","Frostpunk","Heavy Rain","Into the Breach","Kentucky Route Zero","F.E.A.R.","Shining Force","Blaster Master","Bomberman","Panzer Dragoon Saga","Rez","Dead Cells","Pentiment","Braid","Psychonauts","Deus Ex","Night in the Woods","Heroes of Might and Magic III","Lode Runner","Killer7","Noita","Golden Sun","League of Legends","Day of the Tentacle","PlayerUnknown’s Battlegrounds","La-Mulana","Lethal Company","Theme Hospital","Advance Wars","Splatoon","Limbo","Vagrant Story","Joust","Heavy Rain","Into the Breach","Kentucky Route Zero","Frostpunk","Control","Fire Emblem: Awakening","Okami","Thief: The Dark Project","Baba Is You","Mother 3","ActRaiser","Shadow of the Colossus","F-Zero","Professor Layton and the Curious Village","Xenoblade Chronicles","I Wanna Be the Guy","Marvel’s Spider-Man","Metaphor: ReFantazio","Suikoden II","Uncharted 2: Among Thieves","ToeJam & Earl","Prince of Persia: The Sands of Time","Life Is Strange","Zelda II: The Adventure of Link","Signalis","Inside","Terranigma","MechWarrior 2","Half-Life: Alyx","Shenmue","Crystalis","Fallout","The World Ends with You","Kingdom Hearts II","Clair Obscur: Expedition 33","Loop Hero","Dragon Quest VIII: Journey of the Cursed King","Gunstar Heroes","A Short Hike","Kid Icarus","Dig Dug","Skies of Arcadia","StarTropics","Hyper Light Drifter","Grim Fandango","Jet Set Radio","Metroid Dread","Split Fiction","Yakuza 0","Seiken Densetsu 3","Ori and the Blind Forest","Xenogears","Dragon Warrior","Super Smash Bros. Melee","River City Ransom","Katana Zero","Chrono Cross","Phasmophobia","Ecco the Dolphin","Max Payne","Monster Hunter: World","Palworld","Elite","Tunic","System Shock 2","LittleBigPlanet","Ape Escape","Perfect Dark","Alan Wake 2","Jak and Daxter: The Precursor Legacy","Ico","The Secret of Monkey Island","Sly Cooper and the Thievius Raccoonus","Bubble Bobble","Planescape: Torment","Okami","Kingdom Hearts II","MechWarrior 2","Hyper Light Drifter","Yakuza 0","Splatoon","ToeJam & Earl","Crystalis","Skies of Arcadia","Super Smash Bros. Melee","Fallout","Psychonauts","Heroes of Might and Magic III","Phasmophobia","I Wanna Be the Guy","Max Payne","Loop Hero","Theme Hospital","Vagrant Story","Braid","Baba Is You","Seiken Densetsu 3","Lethal Company","Terranigma","Joust","League of Legends","Elite","Lode Runner","Sly Cooper and the Thievius Raccoonus","Frostpunk","Planescape: Torment","Dragon Warrior","Kid Icarus","Pentiment","Prince of Persia: The Sands of Time","Dragon Quest VIII: Journey of the Cursed King","Gunstar Heroes","Chrono Cross","Life Is Strange","Ico","Blaster Master","Tunic","Ape Escape","Ori and the Blind Forest","PlayerUnknown’s Battlegrounds","ActRaiser","Night in the Woods","Suikoden II","Metroid Dread","StarTropics","Control","Shenmue","Panzer Dragoon Saga","The World Ends with You","Dig Dug","F.E.A.R.","Jet Set Radio","Dead Cells","Kentucky Route Zero","Shining Force","Bubble Bobble","Marvel’s Spider-Man","Xenogears","Day of the Tentacle","Heavy Rain","LittleBigPlanet","Golden Sun","The Secret of Monkey Island","Shadow of the Colossus","La-Mulana","Killer7","Zelda II: The Adventure of Link","Uncharted 2: Among Thieves","Signalis","Katana Zero","Noita","Palworld","Advance Wars","Ecco the Dolphin","Mother 3","Deus Ex","Clair Obscur: Expedition 33","Xenoblade Chronicles","Rez","System Shock 2","Limbo","Half-Life: Alyx","F-Zero","Monster Hunter: World","Fire Emblem: Awakening","Perfect Dark","Metaphor: ReFantazio","Into the Breach","Alan Wake 2","Professor Layton and the Curious Village","Split Fiction","Thief: The Dark Project","Jak and Daxter: The Precursor Legacy","Inside","Bomberman","River City Ransom","Grim Fandango","A Short Hike","La-Mulana","Killer7","Yakuza 0","Dragon Warrior","Terranigma","Panzer Dragoon Saga","Seiken Densetsu 3","Joust","Ico","Metroid Dread","Marvel’s Spider-Man","Splatoon","Chrono Cross","Golden Sun","System Shock 2","F-Zero","Gunstar Heroes","Noita","Hyper Light Drifter","PlayerUnknown’s Battlegrounds","Into the Breach","Lethal Company","Frostpunk","Dead Cells","Thief: The Dark Project","Control","Skies of Arcadia","Bomberman","River City Ransom","Limbo","A Short Hike","The World Ends with You","Tunic","Signalis","Planescape: Torment","Crystalis","Fire Emblem: Awakening","Sly Cooper and the Thievius Raccoonus","Day of the Tentacle","F.E.A.R.","Zelda II: The Adventure of Link","Blaster Master","LittleBigPlanet","The Secret of Monkey Island","Uncharted 2: Among Thieves","MechWarrior 2","Perfect Dark","Split Fiction","Metaphor: ReFantazio","Xenoblade Chronicles","Loop Hero","Professor Layton and the Curious Village","Ori and the Blind Forest","Advance Wars","Alan Wake 2","Psychonauts","Prince of Persia: The Sands of Time","Dig Dug","Vagrant Story","Ape Escape","Deus Ex","Half-Life: Alyx","Dragon Quest VIII: Journey of the Cursed King","Bubble Bobble","Theme Hospital","Baba Is You","Night in the Woods","Shenmue","Max Payne","Suikoden II","Heroes of Might and Magic III","Pentiment","Heavy Rain","Life Is Strange","Lode Runner","Palworld","StarTropics","Inside","Okami","ToeJam & Earl","Shadow of the Colossus","Xenogears","Kentucky Route Zero","League of Legends","Monster Hunter: World","Ecco the Dolphin","Kid Icarus","Clair Obscur: Expedition 33","ActRaiser","Mother 3","Jak and Daxter: The Precursor Legacy"];
+
+// Easy and hard tracks: their own fixed schedules (greatest hits / deep cuts), same day numbering as the standard daily.
+PUZZLES.forEach(p=>{if(p.easy&&!EASY_ORDER.includes(p.t))EASY_ORDER.push(p.t);if(p.hard&&!HARD_ORDER.includes(p.t))HARD_ORDER.push(p.t)});
+const orderFor=track=>track==='easy'?EASY_ORDER:track==='hard'?HARD_ORDER:DAILY_ORDER;
+const curTrack=()=>D==='easy'?'easy':D==='hard'?'hard':'std';
+const TRACK_NAME={std:'Daily',easy:'Easy daily',hard:'Hard daily'};
+const dailyIndexFor=(track,n)=>{const o=orderFor(track);const t=o[((n%o.length)+o.length)%o.length];const i=PUZZLES.findIndex(p=>p.t===t);return i<0?0:i};
+const dailyIndex=n=>dailyIndexFor(curTrack(),n);
 const store={
   load(){try{return JSON.parse(localStorage.getItem('loredle')||'{}')}catch(e){return{}}},
   save(d){try{localStorage.setItem('loredle',JSON.stringify(d))}catch(e){}}
@@ -3440,52 +3452,57 @@ function pickVariants(idx){
   const v=p.c.slice(0,5).map((c,i)=>Array.isArray(c)?(lv&&i===0?1-lv[0]:Math.round(Math.random())):0);
   d.lastV=d.lastV||{};d.lastV[p.t]=v;store.save(d);return v;
 }
-function newState(mode,idx,dayN){const n=dayN===undefined?dayNum():dayN;return{mode,idx,guesses:[],done:false,won:false,dayN:n,key:keyOf(dateOf(n)),v:pickVariants(idx),hard:mode==='free'&&D==='hard',diff:mode==='free'?D:'normal'}}
-function history(d){return d.history||{}}
+function newState(mode,idx,dayN){const n=dayN===undefined?dayNum():dayN;return{mode,idx,guesses:[],done:false,won:false,dayN:n,key:keyOf(dateOf(n)),v:pickVariants(idx),hard:D==='hard',diff:mode==='free'?D:'normal',track:mode==='free'?'std':curTrack()}}
+// Per-track storage keys: the standard daily keeps the original names so existing players lose nothing.
+const TK={std:{day:'day',hist:'history',stats:'stats'},easy:{day:'easyDay',hist:'easyHistory',stats:'easyStats'},hard:{day:'hardDay',hist:'hardHistory',stats:'hardStats'}};
+const trackOf=()=>(S&&S.track)||curTrack();
+function history(d,track){return d[TK[track||trackOf()].hist]||{}}
+function setHistory(d,hs,track){d[TK[track||trackOf()].hist]=hs}
 const clueText=(p,i)=>{const c=p.c[i];if(!Array.isArray(c))return c;const v=(S.v&&S.v[i])||0;return c[v]||c[0]}
 function boot(hot){
   loadFilter();
   const saved=store.load();const n=dayNum();
   if(hot&&hot.S){S=hot.S}
-  else if(saved.day&&saved.day.key===todayKey()&&saved.day.mode==='daily'&&saved.day.idx===dailyIndex(n)&&PUZZLES[saved.day.idx]){S=saved.day}
-  else S=newState('daily',dailyIndex(n));
+  else{const tr=curTrack();const sv=saved[TK[tr].day];
+    if(sv&&sv.key===todayKey()&&sv.mode==='daily'&&sv.idx===dailyIndexFor(tr,n)&&PUZZLES[sv.idx]){S=sv;S.track=tr}
+    else S=newState('daily',dailyIndexFor(tr,n));}
   try{const d=store.load();const seen=new Set(d.seen||[]);if(!seen.has(PUZZLES[S.idx].t)){seen.add(PUZZLES[S.idx].t);d.seen=[...seen]}
-    if(S.done&&S.mode==='daily'){const hs=history(d);if(!hs[S.dayN]){hs[S.dayN]={won:S.won,n:S.guesses.length,how:'daily',guesses:S.guesses,v:S.v,idx:S.idx};d.history=hs}}
+    if(S.done&&S.mode==='daily'){const hs=history(d);if(!hs[S.dayN]){hs[S.dayN]={won:S.won,n:S.guesses.length,how:'daily',guesses:S.guesses,v:S.v,idx:S.idx};setHistory(d,hs)}}
     store.save(d)}catch(e){}
   render();
 }
 function startArchive(dayN){
   if($('dlgArchive').open)$('dlgArchive').close();if($('dlgStats').open)$('dlgStats').close();
   if(dayN===dayNum()){S=null;boot(null);return}
-  const h=history(store.load())[dayN];
-  if(h&&h.guesses&&PUZZLES[h.idx]&&PUZZLES[h.idx].t===DAILY_ORDER[dayN%DAILY_ORDER.length]){S={mode:'archive',idx:h.idx,guesses:h.guesses,done:true,won:h.won,dayN,key:keyOf(dateOf(dayN)),v:h.v||[],hard:false}}
-  else S=newState('archive',dailyIndex(dayN),dayN);
+  const tr=curTrack();const h=history(store.load(),tr)[dayN];
+  if(h&&h.guesses&&PUZZLES[h.idx]&&h.idx===dailyIndexFor(tr,dayN)){S={mode:'archive',idx:h.idx,guesses:h.guesses,done:true,won:h.won,dayN,key:keyOf(dateOf(dayN)),v:h.v||[],hard:tr==='hard',track:tr}}
+  else S=newState('archive',dailyIndexFor(tr,dayN),dayN);
   lastRevealed=S.done?MAX:0;render();window.scrollTo({top:0,behavior:'smooth'});
 }
-function persist(){if(S.mode!=='daily')return;const d=store.load();d.day=S;store.save(d)}
+function persist(){if(S.mode!=='daily')return;const d=store.load();d[TK[trackOf()].day]=S;store.save(d)}
 function rounds(d){const r=d.rounds||{played:0,wins:0,streak:0,best:0};if(!r.dist)r.dist=[0,0,0,0,0,0];return r}
 function hardRounds(d){return d.hardRounds||{played:0,wins:0,streak:0,best:0}}
 function easyRounds(d){return d.easyRounds||{played:0,wins:0,streak:0,best:0}}
-function dailyStats(d){return d.stats||{played:0,wins:0,streak:0,max:0,dist:[0,0,0,0,0,0],last:null}}
+function dailyStats(d,track){return d[TK[track||trackOf()].stats]||{played:0,wins:0,streak:0,max:0,dist:[0,0,0,0,0,0],last:null}}
 function recordResult(won,count){
   const d=store.load();
   const r=rounds(d);r.played++;if(won){r.wins++;r.dist[count-1]++;r.streak++;r.best=Math.max(r.best,r.streak)}else r.streak=0;d.rounds=r;
-  if(S.hard){const hr=hardRounds(d);hr.played++;if(won){hr.wins++;hr.streak++;hr.best=Math.max(hr.best,hr.streak)}else hr.streak=0;d.hardRounds=hr}
+  if(S.hard&&S.mode==='free'){const hr=hardRounds(d);hr.played++;if(won){hr.wins++;hr.streak++;hr.best=Math.max(hr.best,hr.streak)}else hr.streak=0;d.hardRounds=hr}
   if(S.diff==='easy'){const er=easyRounds(d);er.played++;if(won){er.wins++;er.streak++;er.best=Math.max(er.best,er.streak)}else er.streak=0;d.easyRounds=er}
-  if(S.mode==='daily'||S.mode==='archive'){const hs=history(d);if(!hs[S.dayN]||!hs[S.dayN].won)hs[S.dayN]={won,n:S.guesses.length,how:S.mode,guesses:S.guesses,v:S.v,idx:S.idx};d.history=hs}
+  if(S.mode==='daily'||S.mode==='archive'){const hs=history(d);if(!hs[S.dayN]||!hs[S.dayN].won)hs[S.dayN]={won,n:S.guesses.length,how:S.mode,guesses:S.guesses,v:S.v,idx:S.idx};setHistory(d,hs)}
   if(S.mode==='daily'){
     const st=dailyStats(d);st.played++;
     if(won){st.wins++;st.dist[count-1]++;const cont=st.last===S.dayN-1;st.streak=cont?st.streak+1:1;st.max=Math.max(st.max,st.streak)}
     else st.streak=0;
-    st.last=S.dayN;d.stats=st;d.day=S;
+    st.last=S.dayN;d[TK[trackOf()].stats]=st;d[TK[trackOf()].day]=S;
   }
   store.save(d);
 }
-function currentDailyStreak(){const st=dailyStats(store.load());const n=dayNum();return (st.last===n||st.last===n-1)?st.streak:0}
+function currentDailyStreak(track){const st=dailyStats(store.load(),track||curTrack());const n=dayNum();return (st.last===n||st.last===n-1)?st.streak:0}
 function streakLine(){
   const r=rounds(store.load());const ds=currentDailyStreak();
   const rs=r.streak?`Round streak <b>${r.streak}</b>${r.streak===r.best&&r.best>1?' (best)':''}`:'Round streak reset';
-  return S.mode==='daily'?`Daily streak <b>${ds}</b> · ${rs}`:rs;
+  return S.mode==='daily'?`${TRACK_NAME[S.track]} streak <b>${ds}</b> · ${rs}`:rs;
 }
 
 // ---------- RENDER ----------
@@ -3496,12 +3513,13 @@ function render(){
   const shown=S.done?MAX:Math.min(MAX,S.guesses.length+1);
   const lbl=$('puzzleLabel');
   const pill=$('modePill');
-  pill.textContent=S.mode==='daily'?'Today’s daily':S.mode==='archive'?'Archive':(S.hard?'Hard mode':S.diff==='easy'?'Easy mode':'Free play');
-  pill.className='mode'+(S.mode==='daily'?'':S.mode==='archive'?' arch':S.hard?' hard':S.diff==='easy'?' easy':' free');
-  if(S.mode==='daily'||S.mode==='archive')lbl.textContent=`No. ${S.dayN+1} · ${S.key}`;
+  const tr=S.track;
+  pill.textContent=S.mode==='daily'?`Today’s ${TRACK_NAME[tr].toLowerCase()}`:S.mode==='archive'?(tr==='std'?'Archive':TRACK_NAME[tr].split(' ')[0]+' archive'):(S.hard?'Hard mode':S.diff==='easy'?'Easy mode':'Free play');
+  pill.className='mode'+(S.mode==='daily'?(tr==='easy'?' easy':tr==='hard'?' hard':''):S.mode==='archive'?' arch':S.hard?' hard':S.diff==='easy'?' easy':' free');
+  if(S.mode==='daily'||S.mode==='archive'){lbl.innerHTML=`<span>No. ${S.dayN+1} · ${S.key}</span>${miniSwitch()}`;wireMini(lbl)}
   else{const sum=filterSummary(F);lbl.innerHTML=`<button id="lblFree">⚙ Free play</button>${sum?' · '+sum.replace(/</g,'&lt;'):''}${miniSwitch()}`;$('lblFree').onclick=openFree;wireMini(lbl)}
   const flags=S.done?(store.load().flags||[]):[];
-  $('dailyStreakN').textContent=currentDailyStreak();
+  $('dailyStreakN').textContent=currentDailyStreak(curTrack());
   const chart=$('chart');chart.innerHTML='';
   for(let i=0;i<MAX;i++){
     const row=document.createElement('div');const isNew=i===shown-1&&shown>lastRevealed;
@@ -3592,7 +3610,7 @@ function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show')
 function share(){
   const n=S.guesses.length;
   const row=S.guesses.map((g,i)=>(S.won&&i===n-1)?'🟩':(g===SKIP?'⬜':'🟥')).join('')+'⬛'.repeat(MAX-n);
-  const head=S.mode==='daily'?`Loredle #${S.dayN+1}`:S.mode==='archive'?`Loredle #${S.dayN+1} (archive)`:(S.hard?'Loredle hard mode':S.diff==='easy'?'Loredle easy mode':'Loredle free play');
+  const tn=S.track==='easy'?'Loredle easy':S.track==='hard'?'Loredle hard':'Loredle';const head=S.mode==='daily'?`${tn} #${S.dayN+1}`:S.mode==='archive'?`${tn} #${S.dayN+1} (archive)`:(S.hard?'Loredle hard mode':S.diff==='easy'?'Loredle easy mode':'Loredle free play');
   const text=`${head} ${S.won?n:'X'}/${MAX}\n${row}\n${S.won?'Solved with '+Math.min(n,MAX)+' piece'+(n===1?'':'s')+' of lore.':'Unsolved.'}\n${SITE_URL}`;
   const done=()=>{const t=$('toast');t.textContent='Result copied';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)};
   const copy=()=>{try{navigator.clipboard.writeText(text).then(done).catch(()=>fallback(text))}catch(e){fallback(text)}};
@@ -3619,7 +3637,13 @@ function wireDsl(el,onChange){
 }
 function miniSwitch(){return dslHTML(D,'sm quick')}
 function paintQuick(){document.querySelectorAll('.dsl.quick').forEach(el=>{el.dataset.val=D;el._last=D})}
-function wireMini(root){root.querySelectorAll('.dsl.quick').forEach(el=>wireDsl(el,v=>{D=v;saveFilter();startRound();toast(`${DIFFS.find(x=>x[0]===D)[1]} mode`)}))}
+function wireMini(root){root.querySelectorAll('.dsl.quick').forEach(el=>wireDsl(el,v=>{
+  const before=curTrack();D=v;saveFilter();const label=DIFFS.find(x=>x[0]===D)[1];
+  if(S&&S.mode!=='free'){ // on a daily or archive puzzle: switch track if it changed, otherwise just note the setting
+    if(curTrack()!==before){if(S.mode==='archive'){const n=S.dayN;startArchive(n)}else{S=null;boot(null)}toast(`Switched to the ${TRACK_NAME[curTrack()].toLowerCase()}`)}
+    else paintQuick();
+    return}
+  startRound();toast(label+' mode')}))}
 
 // ---------- FLAGS ----------
 function toggleFlag(t,i,text,btn){
@@ -3635,10 +3659,10 @@ $('flagClear').onclick=()=>{const d=store.load();d.flags=[];store.save(d);openSt
 
 // ---------- ARCHIVE ----------
 let calY,calM;
-function dotFor(n){const h=history(store.load())[n];if(!h)return '';if(!h.won)return 'grey';return h.how==='daily'?'gold':'green'}
+function dotFor(n){const h=history(store.load(),curTrack())[n];if(!h)return '';if(!h.won)return 'grey';return h.how==='daily'?'gold':'green'}
 function paintCal(){
   const today=dayNum();const first=new Date(calY,calM,1);const last=new Date(calY,calM+1,0);
-  $('calTitle').textContent=first.toLocaleString(undefined,{month:'long',year:'numeric'});
+  $('calTitle').textContent=first.toLocaleString(undefined,{month:'long',year:'numeric'})+(curTrack()==='std'?'':' · '+TRACK_NAME[curTrack()].split(' ')[0]);
   const minD=dateOf(0),maxD=dateOf(today);
   $('calPrev').disabled=new Date(calY,calM,1)<=new Date(minD.getFullYear(),minD.getMonth(),1);
   $('calNext').disabled=new Date(calY,calM+1,1)>maxD;
@@ -3727,14 +3751,14 @@ function bars(dist,fails,hl){
   return dist.map((v,i)=>row(i+1,v,i)).join('')+row('✗',fails,6,'x');
 }
 function openStats(afterRound){
-  const d=store.load();const st=dailyStats(d);const r=rounds(d);
+  const d=store.load();const tr=curTrack();const st=dailyStats(d,tr);const r=rounds(d);$('spDailyH').textContent=TRACK_NAME[tr];document.querySelector('.streaks span').textContent=TRACK_NAME[tr]+' streak';
   const pct=st.played?Math.round(100*st.wins/st.played):0;const rpct=r.played?Math.round(100*r.wins/r.played):0;
-  const ds=currentDailyStreak();
+  const ds=currentDailyStreak(tr);
   $('spDaily').textContent=ds;$('spRound').innerHTML=`<small>×</small>${r.streak}`;$('spRound').className='combo'+(r.streak?'':' zero');
   $('statsGrid').innerHTML=`<div><b>${st.played}</b><span>Played</span></div><div><b>${pct}</b><span>Win %</span></div><div><b>${ds}</b><span>Streak</span></div><div><b>${st.max}</b><span>Best</span></div>`;
   $('roundGrid').innerHTML=`<div><b>${r.played}</b><span>Rounds</span></div><div><b>${rpct}</b><span>Win %</span></div><div><b>${r.streak}</b><span>Streak</span></div><div><b>${r.best}</b><span>Best</span></div>`;
   const just=afterRound&&S&&S.done?(S.won?S.guesses.length-1:6):-1;
-  $('dist').innerHTML=bars(st.dist,st.played-st.wins,S&&S.mode==='daily'?just:-1);
+  $('dist').innerHTML=bars(st.dist,st.played-st.wins,S&&S.mode==='daily'&&S.track===tr?just:-1);
   $('rdist').innerHTML=bars(r.dist,r.played-r.wins,just);
   const er=easyRounds(d);$('easyWrap').hidden=!er.played;
   if(er.played){const ep=Math.round(100*er.wins/er.played);$('easyGrid').innerHTML=`<div><b>${er.played}</b><span>Rounds</span></div><div><b>${ep}</b><span>Win %</span></div><div><b>${er.streak}</b><span>Streak</span></div><div><b>${er.best}</b><span>Best</span></div>`}
